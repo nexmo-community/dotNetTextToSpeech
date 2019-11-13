@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div style="width:50%; padding-top:10px">
+    <div class="content">
+        <div class="title" style="height:20px; background-color:cornflowerblue; text-align:center">
+            <span style="vertical-align:central; text-align:center">Make a call with NCCO </span>
+        </div>
+        <div style="padding-top:20px">
+            @using (Html.BeginForm("MakeCallWithNCCO", "Voice", FormMethod.Post))
+            {
+                <input type="text" name="to" id="to" placeholder="To" style="height:30px" />
+                <input type="text" name="from" id="from" placeholder="From" style="height:30px" />
+                <input type="submit" value="Call" style="height:30px; width:50px" />
+            }
+            <h4>@ViewBag.nccoCallResult</h4>
+        </div>
+    </div>
+</div>
